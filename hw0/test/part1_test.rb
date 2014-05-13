@@ -48,3 +48,30 @@ class TestPart1Max2Sum < Minitest::Test
   end
 
 end
+
+
+# Testing sum_to_n method
+
+class TestSumToN < MiniTest::Test
+
+  def test_nil_array
+    assert !sum_to_n?( nil, 1)
+  end
+
+  def test_empty_array
+    assert !sum_to_n?( [], 1)
+  end
+
+  def test_ordered_array_sum_to_n
+    assert sum_to_n?( [1,2,3,4,5], 7 )
+  end
+
+  def test_ordered_array_sum_to_n_same_element
+    assert sum_to_n?( [1,2,3,4,5], 10 )
+  end
+
+  def test_ordered_array_not_sum_to_n
+    assert !sum_to_n?( [1,2,3,4,5], 11 )
+  end
+
+end
