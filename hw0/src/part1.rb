@@ -11,12 +11,8 @@ def max_2_sum( ary )
   elsif ary.length == 1
     ary.first
   else
-    ary.sort[-1..-2].sum
+    max = ary.sort[-2..-1]
+    max.first + max.last
   end
 
 end
-
-
-#puts sum [1,2,3,4,5,6,7,8,9,10]
-#puts sum []
-#puts sum nil
