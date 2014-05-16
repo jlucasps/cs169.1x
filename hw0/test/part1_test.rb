@@ -63,15 +63,19 @@ class TestSumToN < MiniTest::Test
   end
 
   def test_ordered_array_sum_to_n
-    assert_equal true, sum_to_n?( [1,2,3,4,5], 7 )
+    assert_equal true, sum_to_n?( [1, 2, 3, 4, 5], 7 )
   end
 
-  def test_ordered_array_sum_to_n_same_element
-    assert_equal true, sum_to_n?( [1,2,3,4,5], 10 )
+  def test_ordered_array_not_sum_to_n_same_element
+    assert_equal false, sum_to_n?( [1, 2, 3, 4, 5], 10 )
   end
 
   def test_ordered_array_not_sum_to_n
     assert_equal false, sum_to_n?( [1, 2, 3, 4, 5], 11 )
+  end
+
+  def test_ordered_array_not_sum_to_n_with_negative
+    assert_equal false, sum_to_n?( [-1, -2, 3, 4, 6, -8], 12 )
   end
 
 end

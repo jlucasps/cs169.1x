@@ -31,11 +31,10 @@ end
 
 def sum_to_n?( arr, n )
   return false if arr.nil? or arr.empty? or arr.length == 1
-  arr.each do |element|
-    arr.each do |to_sum|
-      return true if (element + to_sum == n)
+  arr.each do |first|
+    arr.each do |second|
+      return true if (first + second == n) and first != second
     end
   end
   false
 end
-
