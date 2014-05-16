@@ -3,7 +3,7 @@
 # and returns the sum of its elements.
 # For an empty array it should return zero.
 def sum( arr )
-  (!arr.nil? and arr.any?) ? arr.length : 0  
+  (!arr.nil? and arr.any?) ? arr.inject(0, :+) : 0  
 end
 
 
@@ -32,13 +32,9 @@ end
 def sum_to_n?( arr, n )
   return false if arr.nil? or arr.empty? or arr.length == 1
   arr.each do |element|
-    #puts "el: #{element}"
     arr.each do |to_sum|
-      #puts "to_sum: #{to_sum}"
-      #puts "#{element} + #{to_sum} == #{n} -> #{element + to_sum == n}"
       return true if (element + to_sum == n)
     end
-    #puts "--"
   end
   false
 end
